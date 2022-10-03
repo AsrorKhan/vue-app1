@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-    <p>Pagination</p>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
+    <div class="navbar navbar-expand-lg bg-dark" style="text-align: center">
+      <div class="container-fluid" >
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <router-link class="nav-link" to="/">Home</router-link>
+            <router-link class="nav-link" to="/about">About</router-link>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import 'antd/dist/antd.css'
 
 export default {
   name: "App",
@@ -23,7 +33,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.nav-link {
+  color: white;
+  border-radius: 10px;
+}
+.router-link-exact-active {
+  color: teal;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 @import "~bootstrap/dist/css/bootstrap.css";

@@ -1,21 +1,19 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import { reactive } from "vue";
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export const store = reactive({
   state: {
     user: {
-      name: "",
-      password: "",
+      name: "Alex",
       email: "",
+      password: "",
+      isAuth: false,
     },
   },
-  mutations: {
-    setUser(state, item) {
-      state.user.email = item.email;
-      state.user.password = item.password;
-      state.user.name = item.name;
+  methods: {
+    setUser: function (userData) {
+      console.log("userData", userData);
+      store.state.user = userData;
+      console.log("store.state.user", store.state.user);
     },
   },
 });
